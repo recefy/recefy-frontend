@@ -11,7 +11,7 @@
                   Bienvenido a ReceFy
                 </v-card-title>
 
-                <v-card-subtitle class="text-center mb-3 white--text">
+                <v-card-subtitle class="text-center mt-2 white--text">
                   <v-icon class="mr-2" color="white">mdi-silverware-fork-knife</v-icon>
                   La Mejor Manera de Cocinar
                 </v-card-subtitle>
@@ -26,11 +26,11 @@
                 </v-card-text>
 
                 <v-card-actions class="justify-center">
-                  <v-btn color="green lighten-1" dark @click="redireccionar()">
+                  <v-btn color="green lighten-1" dark @click="backendSolicitud()">
                     <v-icon left>mdi-login</v-icon> Iniciar Sesión
                   </v-btn>
 
-                  <v-btn color="blue lighten-1" dark>
+                  <v-btn color="blue lighten-1" dark @click="redireccionar()">
                     <v-icon left>mdi-account-plus</v-icon> Crear Cuenta
                   </v-btn>
                 </v-card-actions>
@@ -49,8 +49,8 @@ export default {
   data() {
     return {
       formLogin: {
-        correo_electronico: '',
-        contraseña: '',
+        email: '',
+        password: '',
       },
       ping: [],
     }
@@ -70,10 +70,9 @@ export default {
       try {
         const response = await this.$axios.get('index');
         this.ping = response.data;
-        this.$toast.error('¡ Recefy no se encuentra Disponible ! ')
+        this.$toast.error('¡ Estimado Usuario Recefy no se encuentra Disponible , Por favor Ingrese en los proximos dias ! ')
       } catch (error) {
-        console.error({ error });
-        this.$toast.error(error);
+        this.$toast.error('Ha ocurrido un error ');
 
       }
     }

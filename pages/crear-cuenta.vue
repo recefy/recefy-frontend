@@ -8,19 +8,21 @@
                         <v-col cols="12" md="8" lg="6">
                             <v-card class="glass pa-6" elevation="10">
                                 <v-card-title class="justify-center white--text encabezado">
-                                    Bienvenido a ReceFy
+                                    ¡ Crea Tu cuenta Ahora !
                                 </v-card-title>
 
-                                <v-card-subtitle class="text-center mb-3 white--text">
+                                <v-card-subtitle class="text-center mt-2 white--text">
                                     <v-icon class="mr-2" color="white">mdi-silverware-fork-knife</v-icon>
-                                    Crea Tu cuenta Ahora
+                                    Recefy
                                 </v-card-subtitle>
+                                 <v-divider></v-divider>
                                 <v-card-text>
                                     <v-form>
                                         <v-row dense>
                                             <v-col cols="12" sm="12" md="12">
                                                 <v-text-field dense outlined v-model="formLoginCrearCuenta.name"
-                                                    label="Nombre Usuario"></v-text-field>
+                                                    label="Nombre Usuario"
+                                                    prepend-inner-icon="mdi-account-circle"></v-text-field>
                                             </v-col>
 
                                             <v-col>
@@ -97,7 +99,7 @@ export default {
 @import 'typeface-lobster';
 
 .background {
-    background-color: rgba(74, 25, 25, 0.6);
+    background-image: url('https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     background-position: center;
     height: 100vh;
