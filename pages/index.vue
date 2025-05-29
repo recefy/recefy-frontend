@@ -13,7 +13,7 @@
 
                 <v-card-subtitle class="text-center mb-3 white--text">
                   <v-icon class="mr-2" color="white">mdi-silverware-fork-knife</v-icon>
-                  Cocina con lo que tienes en casa
+                  La Mejor Manera de Cocinar
                 </v-card-subtitle>
                 <v-card-text>
                   <v-form>
@@ -26,7 +26,7 @@
                 </v-card-text>
 
                 <v-card-actions class="justify-center">
-                  <v-btn color="green lighten-1" dark @click="goToRecetas">
+                  <v-btn color="green lighten-1" dark @click="redireccionar()">
                     <v-icon left>mdi-login</v-icon> Iniciar Sesión
                   </v-btn>
 
@@ -57,21 +57,22 @@ export default {
   },
 
   mounted() {
-    this.traerDjango();
+    this.backendSolicitud();
   },
 
   methods: {
-    goToRecetas() {
-      this.$router.push({ name: 'Recetas' });
+    redireccionar(ruta) {
+      this.$router.push('/crear-cuenta');
+      this.$refs.miga.reset();
     },
 
-    async traerDjango() {
+    async backendSolicitud() {
       try {
         const response = await this.$axios.get('index');
         this.ping = response.data;
         this.$toast.error('¡ Recefy no se encuentra Disponible ! ')
       } catch (error) {
-        console.error({error});
+        console.error({ error });
         this.$toast.error(error);
 
       }
