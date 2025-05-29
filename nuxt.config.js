@@ -52,10 +52,10 @@ export default {
   },
 
   axios: {
-    baseURL: 'http://127.0.0.1:8800/api/',
+    baseURL: process.env.API_URL,
     credentials: false
   },
-  
+
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
