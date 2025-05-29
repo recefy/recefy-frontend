@@ -97,7 +97,7 @@ export default {
 @import 'typeface-lobster';
 
 .background {
-    background-image: url('https://github.com/joseRvas13/Recetarium-codespaces/blob/main/Aplicaciones/Recetarium/static/media/iniciar.jpg?raw=true');
+    background-color: rgba(74, 25, 25, 0.6);
     background-size: cover;
     background-position: center;
     height: 100vh;
